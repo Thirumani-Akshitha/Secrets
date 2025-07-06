@@ -34,14 +34,14 @@ A secure full-stack authentication app where users can register, log in, and ano
    - Users can sign up or log in with their Google account
 
 ## Create .env file which has:
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-SESSION_SECRET=your_secret_key
-PG_USER=your_db_user
-PG_HOST=localhost
-PG_DATABASE=secrets
-PG_PASSWORD=your_password
-PG_PORT=5432
+GOOGLE_CLIENT_ID=your_google_client_id, 
+GOOGLE_CLIENT_SECRET=your_google_client_secret, 
+SESSION_SECRET=your_secret_key, 
+PG_USER=your_db_user, 
+PG_HOST=localhost, 
+PG_DATABASE=secrets, 
+PG_PASSWORD=your_password, 
+PG_PORT=5432.
 
 
 ## 🚀 Running Locally
