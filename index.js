@@ -29,13 +29,13 @@ app.use(        //creates a session cookie.
 app.use(passport.initialize()); 
 app.use(passport.session());
 
-const db = new pg.Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+const db = new pg.Client({ //db connection
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT,
 });
-
 db.connect();
 
 
@@ -190,8 +190,7 @@ passport.use("google",
   new GoogleStrategy({
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://secrets-48ki.onrender.com/auth/google/secrets",
-
+      callbackURL: "http://localhost:3000/auth/google/secrets",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     }, async(accessToken,refreshToken,profile,cb)=> {
       try{
